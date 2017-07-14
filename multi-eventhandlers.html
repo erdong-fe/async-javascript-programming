@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>multi-event-handler</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<button id='btn'>Click</button>
+
+		<script>
+			var btn = document.getElementById('btn');
+
+			function pa() {
+				console.log('a');
+			}
+			function pb() {
+				console.log('b');
+			}
+
+			btn.onclick = function () {
+				pa.apply(this, []);
+				pb.apply(this, []);
+			}
+		</script>
+	</body>
+</html>
